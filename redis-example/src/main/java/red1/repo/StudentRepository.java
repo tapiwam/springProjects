@@ -15,5 +15,9 @@ public interface StudentRepository {
     public Map<String, Student> findAllStudents();
  
     public void deleteStudent(String id);
+    
+    public Long count();
+    
+    public Long deleteAll();
 
 }

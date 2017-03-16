@@ -48,5 +48,26 @@ public class StudentRepositoryImpl implements StudentRepository {
     public void deleteStudent(String id) {
         hashOps.delete(KEY, id);
     }
+    
+    
+    public Long count() {
+    	Long c = 0L;
+    	
+    	for(String m: hashOps.entries(KEY).keySet()){
+    		c++;
+    	};
+    	
+    	return c;
+    }
 
+    public Long deleteAll() {
+    	Long c = 0L;
+    	
+    	for(String m: hashOps.entries(KEY).keySet()){
+    		deleteStudent(m);
+    		c++;
+    	};
+    	
+    	return c;
+    }
 }
